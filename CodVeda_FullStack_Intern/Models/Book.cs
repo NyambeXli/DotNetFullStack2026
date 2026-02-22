@@ -1,4 +1,5 @@
-﻿namespace CodVeda_FullStack_Intern.Models
+//Book Model
+namespace CodVeda_FullStack_Intern.Models
 {
     public class Book
     {
