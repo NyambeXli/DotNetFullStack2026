@@ -1,7 +1,5 @@
 # 🎯 BookFlow - Full-Stack Library Management System
 
-🔗 **Live Demo / Portfolio:** [https://www.loom.com/share/3ad43822411a4fb0a98eb6c625141ee0](https://www.loom.com/share/3ad43822411a4fb0a98eb6c625141ee0)
-
 ---
 
 ## 🌟 What is BookFlow?
