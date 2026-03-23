@@ -1,47 +1,144 @@
-//Create
 @model CodVeda_FullStack_Intern.Models.Book
 
 @{
-    ViewData["Title"] = "Add New Book";
+    ViewData["Title"] = "Add New Masterpiece";
 }
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow border-0">
-                <div class="card-header bg-primary text-white">
-                    <h3 class="mb-0">Add a New Book</h3>
+<style>
+    .form-container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 25px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .form-header {
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .form-body {
+        padding: 40px;
+    }
+
+    .form-control {
+        border-radius: 12px;
+        padding: 12px 20px;
+        border: 2px solid #f1f3f5;
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+        }
+
+    .input-group-text {
+        background: #f8f9fa;
+        border: 2px solid #f1f3f5;
+        border-right: none;
+        border-radius: 12px 0 0 12px;
+        color: #0d6efd;
+    }
+
+    .form-control-with-icon {
+        border-left: none;
+        border-radius: 0 12px 12px 0;
+    }
+
+    .btn-submit {
+        background: #198754;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 700;
+        border: none;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+
+        .btn-submit:hover {
+            background: #157347;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+        }
+
+    .instruction-text {
+        font-size: 0.85rem;
+        color: #6c757d;
+        margin-top: 5px;
+    }
+</style>
+
+<div class="container">
+    <div class="form-container">
+        <div class="form-header">
+            <h2 class="fw-bold mb-1"><i class="fa-solid fa-circle-plus me-2"></i>Add New Book</h2>
+            <p class="mb-0 opacity-75">Update the digital library with fresh content.</p>
+        </div>
+
+        <div class="form-body">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <label asp-for="Title" class="form-label fw-bold text-secondary">Book Title</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-heading"></i></span>
+                            <input asp-for="Title" class="form-control form-control-with-icon" placeholder="Enter book title" required />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <label asp-for="Publisher" class="form-label fw-bold text-secondary">Publisher</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-building-columns"></i></span>
+                            <input asp-for="Publisher" class="form-control form-control-with-icon" placeholder="Publishing House" required />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <label asp-for="PublishDate" class="form-label fw-bold text-secondary">Year</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
+                            <input asp-for="PublishDate" class="form-control form-control-with-icon" placeholder="e.g. 2026" required />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <label asp-for="ReadUrl" class="form-label fw-bold text-primary">Direct Reading Link (URL)</label>
+                        <div class="input-group">
+                            <span class="input-group-text border-primary text-primary"><i class="fa-solid fa-link"></i></span>
+                            <input asp-for="ReadUrl" class="form-control form-control-with-icon border-primary" placeholder="https://www.gutenberg.org/files/..." />
+                        </div>
+                        <p class="instruction-text">
+                            <i class="fa-solid fa-info-circle me-1 text-primary"></i>
+                            This link makes the "Open Book" button appear in the catalog.
+                        </p>
+                    </div>
+
+                    <div class="col-md-12 mb-4">
+                        <label asp-for="Summary" class="form-label fw-bold text-secondary">Summary</label>
+                        <textarea asp-for="Summary" class="form-control" rows="4" placeholder="Brief summary of the book..." required></textarea>
+                    </div>
                 </div>
-                <div class="card-body p-4">
-                    <form asp-action="Create" method="post">
 
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Book Title</label>
-                            <input asp-for="Title" class="form-control" placeholder="Enter book title" required />
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Publisher</label>
-                            <input asp-for="Publisher" class="form-control" placeholder="Enter publisher" required />
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Publish Date (Year)</label>
-                            <input asp-for="PublishDate" class="form-control" placeholder="e.g. 2026" required />
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Summary</label>
-                            <textarea asp-for="Summary" class="form-control" rows="4" placeholder="Brief summary of the book..." required></textarea>
-                        </div>
-
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-success">Add to Library</button>
-                            <a asp-action="Index" class="btn btn-outline-secondary">Back to Catalog</a>
-                        </div>
-                    </form>
+                <div class="d-flex gap-3 mt-4">
+                    <a asp-action="Index" class="btn btn-outline-secondary px-4 rounded-pill">
+                        <i class="fa-solid fa-arrow-left me-2"></i> Cancel
+                    </a>
+                    <button type="submit" class="btn btn-submit">
+                        <i class="fa-solid fa-save me-2"></i> Save to Library
+                    </button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
+
+}
