@@ -29,26 +29,29 @@ namespace CodVeda_FullStack_Intern.Data
                 new Book
                 {
                     Id = 1,
-                    Title = "BookFlow History",
-                    Publisher = "CodVeda Press",
-                    PublishDate = "2024",
-                    Summary = "The comprehensive history of how the BookFlow library management system was developed during the internship."
+                    Title = "The Adventures of Sherlock Holmes",
+                    Publisher = "George Newnes",
+                    PublishDate = "1892",
+                    Summary = "A collection of twelve short stories featuring the legendary detective Sherlock Holmes and his companion Dr. Watson.",
+                    ReadUrl = "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm"
                 },
                 new Book
                 {
                     Id = 2,
-                    Title = "UfsConnectBook History",
-                    Publisher = "University Press",
-                    PublishDate = "2023",
-                    Summary = "Exploring the digital transformation of student connections and resource sharing in academic environments."
+                    Title = "Alice's Adventures in Wonderland",
+                    Publisher = "Macmillan",
+                    PublishDate = "1865",
+                    Summary = "A young girl named Alice falls through a rabbit hole into a fantasy world populated by peculiar, anthropomorphic creatures.",
+                    ReadUrl = "https://www.gutenberg.org/files/11/11-h/11-h.htm"
                 },
                 new Book
                 {
                     Id = 3,
-                    Title = "Lindele's History",
-                    Publisher = "Tech Pioneers Publishing",
-                    PublishDate = "2025",
-                    Summary = "A deep dive into the journey of Lindele Nyambe, focusing on software engineering milestones and future visions."
+                    Title = "The Great Gatsby",
+                    Publisher = "Charles Scribner's Sons",
+                    PublishDate = "1925",
+                    Summary = "The story of the mysteriously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan in the Roaring Twenties.",
+                    ReadUrl = "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html"
                 }
             );
         }

@@ -8,6 +8,7 @@ namespace CodVeda_FullStack_Intern.Models
         public string Publisher { get; set; } = string.Empty;
         public string PublishDate { get; set; } = string.Empty;
         public string Summary { get; set; } = string.Empty;
-        public bool IsHidden { get; set; } = false; 
+        public bool IsHidden { get; set; } = false;
+        public string ReadUrl { get; set; } = string.Empty;
     }
 }
