@@ -1,49 +1,173 @@
-//Index
 @{
     ViewData["Title"] = "Home Page";
 }
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 <style>
-    
-    .home-container {
-        padding: 20px; 
-        height: 85vh; 
+    :root {
+        --primary-blue: #0d6efd;
+        --dark-navy: #1a202c;
+        --glass-white: rgba(255, 255, 255, 0.15);
     }
 
-    .hero-image {
-       
-        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-                    url('/images/index_man.webp'); 
-        
-        background-size: cover;
-        background-position: center;
+    .home-wrapper {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .hero-section {
+        position: relative;
+        height: 80vh;
         width: 100%;
-        height: 100%;
-        border-radius: 20px; 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
-        
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                    url('/images/index_man.webp') center/cover no-repeat;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        text-align: center;
+        justify-content: center;
+        border-radius: 0 0 50px 50px;
+        margin-bottom: 80px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     }
 
-    .welcome-text {
-        background-color: rgba(255, 255, 255, 0.8); 
-        padding: 30px;
-        border-radius: 15px;
+    .hero-content {
+        max-width: 700px;
+        text-align: center;
+        padding: 50px;
+        background: var(--glass-white);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 30px;
+        color: white;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .feature-card {
+        background: #ffffff;
+        border: none;
+        border-radius: 25px;
+        padding: 40px 30px;
+        height: 100%;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        text-align: center;
+        border: 1px solid #f1f1f1;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 40px rgba(13, 110, 253, 0.15);
+        border-color: var(--primary-blue);
+    }
+
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #0d6efd, #0043a8);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 25px;
+        box-shadow: 0 8px 15px rgba(13, 110, 253, 0.3);
+    }
+
+    .cta-final {
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        border-radius: 40px;
+        padding: 100px 40px;
+        color: white;
+        text-align: center;
+        margin: 100px 0;
+    }
+
+    .btn-hero {
+        padding: 18px 45px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-hero:hover {
+        transform: scale(1.08);
+        box-shadow: 0 15px 30px rgba(13, 110, 253, 0.4);
     }
 </style>
 
-<div class="home-container">
-    <div class="hero-image">
-        <div class="welcome-text">
-            <h1 class="display-4 fw-bold text-dark">Welcome to BookFlow</h1>
-            <p class="lead text-dark">Managing your library with precision and style.</p>
-            <hr class="my-4">
-            <p class="text-secondary">Codveda Full-Stack Internship - Phase 1</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Explore Catalog</a>
+<div class="home-wrapper">
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">BookFlow</h1>
+            <p class="fs-5 mb-5 opacity-90">Experience the future of library management. A seamless, scalable, and powerful platform designed for modern literary collections.</p>
+            
+            <div class="d-grid gap-2 col-lg-8 mx-auto">
+                <a href="/Books" class="btn btn-primary btn-hero">
+                    <i class="fa-solid fa-magnifying-glass me-2"></i> Explore Catalog
+                </a>
+            </div>
         </div>
+    </section>
+
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-dark">Engineered for Performance</h2>
+            <p class="text-muted">Built with industry-standard architecture and clean code.</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <h4 class="fw-bold">High Concurrency</h4>
+                    <p class="text-secondary">Built on .NET Core for blazing fast performance, handling thousands of book requests simultaneously without lag.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="icon-circle">
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                    </div>
+                    <h4 class="fw-bold">Secure Access</h4>
+                    <p class="text-secondary">Industry-standard JWT and Identity security ensures that only authorized personnel manage sensitive library data.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="fw-bold">Real-time Tracking</h4>
+                    <p class="text-secondary">Monitor book availability, borrowing trends, and due dates with our dynamic circulation engine.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+        <section class="cta-final">
+            <h2 class="display-4 fw-bold mb-4">Start Managing Smarter</h2>
+            <p class="lead mb-5 opacity-75">Join a new era of digital library organization and data-driven insights.</p>
+            <a href="Account/Register" class="btn btn-light btn-lg px-5 py-3 rounded-pill fw-bold">Create Your Account</a>
+        </section>
     </div>
 </div>
