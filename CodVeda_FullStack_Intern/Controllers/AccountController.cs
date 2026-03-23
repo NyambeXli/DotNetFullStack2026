@@ -27,16 +27,20 @@ namespace CodVeda_FullStack_Intern.Controllers
         public async Task<IActionResult> Register(User newUser)
         {
             var emailExists = await _context.Users.AnyAsync(u => u.Email == newUser.Email);
-            
             if (emailExists)
             {
                 ModelState.AddModelError("Email", "This email address is already in our database.");
             }
 
+            if (string.IsNullOrEmpty(newUser.Password) || newUser.Password.Length < 7)
+            {
+                ModelState.AddModelError("Password", "Password must be at least 7 characters long.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Users.Add(newUser);
-                await _context.SaveChangesAsync(); 
+                await _context.SaveChangesAsync();
                 return RedirectToAction("Login");
             }
             return View(newUser);
