@@ -16,8 +16,8 @@ namespace CodVeda_FullStack_Intern.Models
 
         [Required(ErrorMessage = "Password is required")]
         [MinLength(7, ErrorMessage = "Password must be at least 7 characters long")]
-        [RegularExpression(@"^(?=.*[a-zA-Z])(?=.*[0-9\W]).+$", 
-            ErrorMessage = "Password must contain at least one alphabet and at least one number or special character")]
+        //[RegularExpression(@"^(?=.*[a-zA-Z])(?=.*[0-9\W]).+$", 
+        //    ErrorMessage = "Password must contain at least one alphabet and at least one number or special character")]
         public string Password { get; set; } = string.Empty; 
     }
 }
